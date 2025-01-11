@@ -7,6 +7,7 @@
 local uiLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/Fluent-UI-library/main/Source/Source.lua"))()
 ```
 # Создать окно
+
 Описание:
 Создает новое окно с заголовком и двумя фреймами: один для вкладок, другой для основного содержимого.
 
@@ -15,6 +16,7 @@ local uiLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/RSc
 local window = uiLibrary:MakeWindow({Name = "My Window"})
 ```
 # Создать вкладку
+
 Описание:
 Добавляет новую вкладку в фрейм вкладок. Вкладка отобразит свое содержимое в главном фрейме при щелчке.
 
@@ -22,3 +24,23 @@ local window = uiLibrary:MakeWindow({Name = "My Window"})
 ```lua
 uiLibrary:addTab({Name = "Tab 1"})
 ```
+# Создать кнопку
+
+Описание:
+Добавляет кнопку к содержимому указанной вкладки.
+
+Пример использования:
+```lua
+uiLibrary:addButton({
+    TabName = "Tab 1",
+    Name = "Click Me",
+    Function = function()
+        print("Button clicked!")
+    end
+})
+```
+
+# Примечания
+- Убедитесь, что вкладки добавлены, прежде чем добавлять к ним кнопки или надписи.
+- `uiLibrary` автоматически управляет видимостью вкладок и их содержимым в зависимости от взаимодействия с пользователем.
+- `Размер рамок` прокрутки автоматически настраивается по мере добавления новых элементов пользовательского интерфейса.
