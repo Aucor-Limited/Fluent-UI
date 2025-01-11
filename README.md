@@ -39,6 +39,61 @@ uiLibrary:addButton({
     end
 })
 ```
+# Создать переключатель
+
+Описание:
+Добавляет переключатель к содержимому указанной вкладки.
+
+Пример использования:
+```lua
+local Toggle = Tabs.Main:CreateToggle("MyToggle", {Title = "Toggle", Default = false })
+
+Toggle:OnChanged(function()
+    print("Toggle changed:", Options.MyToggle.Value)
+end)
+```
+
+# Создать слайдер
+
+Описание:
+Добавляет слайдер к содержимому указанной вкладки.
+
+Пример использования:
+```lua
+local Slider = Tabs.Main:CreateSlider("Slider", {
+    Title = "Slider",
+    Description = "This is a slider",
+    Default = 2,
+    Min = 0,
+    Max = 5,
+    Rounding = 1,
+    Callback = function(Value)
+        print("Slider was changed:", Value)
+    end
+})
+```
+```lua
+Slider:OnChanged(function(Value)
+    print("Slider changed:", Value)
+end)
+```
+```lua
+Slider:SetValue(3)
+```
+# Создать выпадающие меню
+Описание:
+Добавляет выпадающие меню к содержимому указанной вкладки.
+
+Пример использования:
+```lua
+local Dropdown = Tabs.Main:CreateDropdown("Dropdown", {
+    Title = "Dropdown",
+    Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
+    Multi = false,
+    Default = 1,
+})
+```
+
 
 # Примечания
 - Убедитесь, что вкладки добавлены, прежде чем добавлять к ним кнопки или надписи.
